@@ -4,18 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 
 @Entity
-public class Product {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    private double price;
-    private String description;
-    private int stock;
-    private String category;
-    private String image;
+    public int id;
+    public String name;
+    public double price;
+    public String description;
+    public int stock;
+    public String category;
+    public String image;
 
     public Product() {
     }
@@ -27,6 +30,10 @@ public class Product {
         this.stock = stock;
         this.category = category;
         this.image = image;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -51,6 +58,10 @@ public class Product {
 
     public String getImage() {
         return image;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {

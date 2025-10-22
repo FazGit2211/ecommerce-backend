@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.eCommerceProducts.models.T_Shirt;
-import com.api.eCommerceProducts.services.T_ShirtService;
+import com.api.eCommerceProducts.services.tshirts.T_ShirtService;
 
 @RestController
-@RequestMapping(value = "/tshirt", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/tshirts", produces = MediaType.APPLICATION_JSON_VALUE)
 public class T_ShirtController {
 
     @Autowired

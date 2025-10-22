@@ -1,4 +1,4 @@
-package com.api.eCommerceProducts.services;
+package com.api.eCommerceProducts.services.tshirts;
 
 import java.util.List;
 

@@ -12,25 +12,32 @@ import jakarta.persistence.InheritanceType;
 public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    protected int id;
     public String name;
     public double price;
     public String description;
     public int stock;
     public String category;
     public String image;
+    public String code;
+    public String type;
 
     public Product() {
     }
 
-    public Product(String name, double price, String description, int stock, String category, String image) {
+    public Product(String name, double price, String description, int stock, String category, String image,String code,String type) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.stock = stock;
         this.category = category;
         this.image = image;
+        this.code = code;
+        this.type = type;
     }
+
+    //Método abstracto para descontar el stock
+    public abstract void decrementStock(int num);
 
     public int getId() {
         return id;
